@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CrudController;
 
 
 Route::get('/home', function () {
@@ -9,7 +10,8 @@ Route::get('/home', function () {
 });
 
 Route::get('/user', [UserController::class, 'get']);
-Route::get('/cadastro', [UserController::class, 'get']);
+Route::get('/index', 'CrudController@index');
+Route::get('/cadastro', [Cadastro::class, 'get']);
 //Route::redirect('/usuario','/', 301);
 
 /*
