@@ -8,7 +8,7 @@ use App\Models\User;
 //use App\User;
 class UserController extends Controller
 {
-
+/*
     private $objuser;
     private $objproduto;
 
@@ -17,10 +17,12 @@ class UserController extends Controller
         $this->objuser=new User();
         $this->objproduto=new Produto();
     }
-
+*/
     public function get()
     {
-        return view('index');
+        $produtos = produto::all();
+       // dd($produtos);
+       return view('index', ['produtos'=>produtos]);
     }
 
 /*
@@ -45,6 +47,7 @@ class UserController extends Controller
         return view('cadastro', compact('User'));
     }
 */
+/*
     public function store(Request $request)
 {
     $cad=$this->objBook->create([
@@ -121,7 +124,7 @@ protected $fillable=['nome','email','preco','quantidade'];
      * @return \Illuminate\Http\Response
      */
 
-     /*
+     
      public function destroy($id)
     {
         //

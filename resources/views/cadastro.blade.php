@@ -1,4 +1,8 @@
+@extends('layout.templete')
 
+@section('title','Cadastrando')
+
+@section('content')
 
 
 <div class="container px-5 my-5">
@@ -29,3 +33,5 @@
     </form>
 </div>
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+@endsection 

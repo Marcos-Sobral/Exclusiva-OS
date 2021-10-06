@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-     <meta charset="utf-8">
-     <title></title>
-</head>
-<body>
-     
+@extends('layout.templete')
 
+@section('title','Inicio')
+
+@section('content')
+
+ 
 h1> Lista </h1>
 
 <br> <br>
@@ -48,22 +46,23 @@ h1> Lista </h1>
     <tr>
       <th scope="col">id</th>
       <th scope="col">Nome</th>
-      <th scope="col">Email</th>
-      <th scope="col">senha</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Preco</th>
     </tr>
   </thead>
   <tbody>
-  
+  @foreach($produtos as $produto)
 
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th>{{ $produtos->id }}</th>
+      <td>{{ $produtos->nome }}</td>
+      <td>{{ $produtos->Quantidade }}</td>
+      <td>{{ $produtos->preco }}</td>
     </tr>
+    @endforeach
   </tbody>
 </table>
 
 </div>
-</body>
-</html><
+
+@endsection 

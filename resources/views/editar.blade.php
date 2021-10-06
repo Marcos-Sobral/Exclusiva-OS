@@ -1,3 +1,8 @@
+@extends('layout.templete')
+
+@section('title','Editando')
+
+@section('content')
 
 
 
@@ -29,3 +34,5 @@
     </form>
 </div>
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+@endsection 
