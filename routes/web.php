@@ -9,9 +9,23 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
-Route::get('/user', [UserController::class, 'get']);
-Route::get('/index', 'CrudController@index');
-Route::get('/cadastro', [Cadastro::class, 'get']);
+route::get('/index', [UserController::class, 'get']);
+route::get('/cadastro', [UserController::class, 'cadastro'])->name('index-cadastro');
+route::get('/editar', [UserController::class, 'editar'])->name('index-editar');
+
+route::fallback(function(){
+    return 'Erro de localização de rota !';
+});
+/*
+route::get('/home/{name?}', function($name){
+    return view('cadastro',['cadastrar'=>$name]);
+})->name('index-cadastro');
+
+route::get('/index/{name?}', function($name = null){
+    return view('editar',['editar'=>$name]);
+})->name('home-editar');
+*/
+
 //Route::redirect('/usuario','/', 301);
 
 /*

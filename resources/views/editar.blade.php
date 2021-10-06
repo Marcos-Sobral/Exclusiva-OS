@@ -22,7 +22,7 @@
 
         <div class="text-center mt-3 mb-4">
     <a href="{{url('produto/create')}}">
-        <button class="btn btn-success">Cadastrar</button>
+        <button class="btn btn-success">Editar</button>
     </a>
 </div>
 

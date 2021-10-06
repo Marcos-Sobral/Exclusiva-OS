@@ -8,6 +8,7 @@ use App\Models\User;
 //use App\User;
 class UserController extends Controller
 {
+
     private $objuser;
     private $objproduto;
 
@@ -19,21 +20,47 @@ class UserController extends Controller
 
     public function get()
     {
-        //$produto=$this->objproduto->all();
-        return 'oi';
-    }//
-}
+        return view('index');
+    }
+
 /*
-  /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    /*
-    public function create()
+
+    public function cadastro()
     {
-        //
+        return view('cadastro');
     }
+
+    public function editar()
+    {
+        return view('editar');
+    }
+    /*
+    public function cadastro()
+    {
+        $User=$this->objuser->all();
+        return view('cadastro', compact('User'));
+    }
+*/
+    public function store(Request $request)
+{
+    $cad=$this->objBook->create([
+       'nome'=>$request->nome,
+       'email'=>$request->email,
+       'preco'=>$request->preco,
+       'quantidade'=>$request->quantidade,
+    ]);
+    if($cad){
+        return redirect('produto');
+    }
+}
+
+protected $fillable=['nome','email','preco','quantidade'];
+
+}
 
     /*
      * Store a newly created resource in storage.
@@ -99,4 +126,4 @@ class UserController extends Controller
     {
         //
     }
-/*}
+}

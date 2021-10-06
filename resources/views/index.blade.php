@@ -10,19 +10,35 @@
 h1> Lista </h1>
 
 <br> <br>
-<a href="{{ url('assets/bootstrap/index.html') }}">Inicio</a>
+<div class="text-center mt-3 mb-4">
+<a href="{{ url('assets/bootstrap/index.html') }}">
+        <button class="btn btn-success">Inicio</button>
+    </a>
+</div>
+
+
+<br> <br>
+
+<div class="text-center mt-3 mb-4">
+    <a href="{{ route('index-cadastro') }}">
+        <button class="btn btn-success">Cadastrar</button>
+    </a>
+</div>
+
+<br> <br>
+
+<div class="text-center mt-3 mb-4">
+    <a href="{{ route('index-editar') }}">
+        <button class="btn btn-success">Editar</button>
+    </a>
+</div>
+
+<br> <br>
+<a href="#">Excluir</a>
 <br> <br>
 
 <br> <br>
-<a href="edição">Editar</a>
-<br> <br>
-
-<br> <br>
-<a href="excluir">Excluir</a>
-<br> <br>
-
-<br> <br>
-<a href="pesquisa">Consultar</a>
+<a href="#">Consultar</a>
 <br> <br>
 
 <div class="col-8 m-auto">
