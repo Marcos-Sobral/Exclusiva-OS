@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Produto;
+use App\Models\produto;
 use App\Models\User;
 //use App\User;
 class UserController extends Controller
@@ -20,9 +20,13 @@ class UserController extends Controller
 */
     public function get()
     {
-        $produtos = produto::all();
-       // dd($produtos);
-       return view('index', ['produtos'=>produtos]);
+        //$produtos = produto::all();
+        $produtos = produto::get();
+        //dd($produtos);
+       //return view('index', ['produtos'->produto]);
+       //return view('index', ['produtos']);
+       return view ('index', compact('produtos'));
+      
     }
 
 /*
