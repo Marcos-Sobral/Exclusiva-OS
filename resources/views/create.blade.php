@@ -5,29 +5,32 @@
 @section('content')
 
 
-<div class="container px-5 my-5">
-    <form name="formCad" id="formCad" method="post" action="{{url('produto')}}">    
+<div class="container">
+    <form method="POST" action="{{route('index-store')}}">    
     @csrf
 
-        <div class="mb-3">
-            <label class="form-label" for="nomeDoProduto">Nome do produto</label>
+    <div class="form-group">
+            <label  for="ID">ID</label>
+             <input class="form-control" type="text" name="id" id="id" placeholder="Informe o id do produto"><br>
+        </div>
+
+        <div class="form-group">
+            <label  for="nomeDoProduto">Nome do produto</label>
              <input class="form-control" type="text" name="title" id="title" placeholder="Informe o nome do produto"><br>
         </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="valor"> Valor</label>
+        <div class="form-group">
+            <label for="valor"> Valor</label>
             <input class="form-control" type="text" name="preco" id="preco" placeholder="Informe o Valor do produto"><br>
         </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="nomeDoProduto">Quantidade </label>
+        <div class="form-group">
+            <label  for="nomeDoProduto">Quantidade </label>
              <input class="form-control" type="text" name="quantidade" id="quantidade" placeholder="Informe a quantidade de produto"><br>
         </div>
 
         <div class="text-center mt-3 mb-4">
-    <a href="{{url('produto/create')}}">
-        <button class="btn btn-success">Cadastrar</button>
-    </a>
+            <input type="submit" name="submit" class="btn btn-primary">
 </div>
 
     </form>

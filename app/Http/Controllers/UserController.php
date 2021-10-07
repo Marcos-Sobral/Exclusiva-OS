@@ -21,11 +21,12 @@ class UserController extends Controller
     public function get()
     {
         //$produtos = produto::all();
-        $produtos = produto::get();
-        //dd($produtos);
-       //return view('index', ['produtos'->produto]);
+        $prod = produto::get();
+        //dd($prod);
+       //return view('index', ['prod'->produto]);
        //return view('index', ['produtos']);
-       return view ('index', compact('produtos'));
+       return view ('index', compact('prod'));
+       //return view('index');
       
     }
 
@@ -35,9 +36,30 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function cadastro()
+    public function store(Request $request ){
+        dd($request);
+     }
+
+    /* public function store(Request $request ){
+        $event = new produto;
+        $event->idProduto = $request->id;
+        $event->nomeProduto = $request->nome;
+        $event->quantidadeProduto = $request->quantidade;
+        $event->precoProduto = $request->preco;
+
+        $event->save();
+        //return redirect()->route('index-home');
+      }
+      
+/*
+     public function store(Request $request ){
+        produto::create($request->all());
+        return redirect()->route('index-home');
+      }
+      */
+    public function create()
     {
-        return view('cadastro');
+        return view('create');
     }
 
     public function editar()

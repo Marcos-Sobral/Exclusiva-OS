@@ -18,7 +18,7 @@ h1> Lista </h1>
 <br> <br>
 
 <div class="text-center mt-3 mb-4">
-    <a href="{{ route('index-cadastro') }}">
+    <a href="{{ route('index-create') }}">
         <button class="btn btn-success">Cadastrar</button>
     </a>
 </div>
@@ -51,13 +51,13 @@ h1> Lista </h1>
     </tr>
   </thead>
   <tbody>
-  @foreach($produtos as $produto)
+  @foreach($prod as $produto)
 
     <tr>
-      <th>{{ $produtos->id }}</th>
-      <td>{{ $produtos->nome }}</td>
-      <td>{{ $produtos->Quantidade }}</td>
-      <td>{{ $produtos->preco }}</td>
+      <th>{{ $prod->idProduto }}</th>
+      <td>{{ $prod->nomeProduto }}</td>
+      <td>{{ $prod->quantidadeProduto }}</td>
+      <td>{{ $prod->precoProduto }}</td>
     </tr>
     @endforeach
   </tbody>

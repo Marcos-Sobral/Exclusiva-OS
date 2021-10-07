@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
-    protected $table='produto';
+    //protected $table='produtos';   
     use HasFactory;
 
-    /*protected $fillable = [
-        'id',
-        'nome',
-        'Quantidade',
-        'preco',
-    ];*/
-
+    protected $fillable = [
+        "idProduto",
+        "nomeProduto",
+        "quantidadeProduto",
+        "precoProduto",
+    ];
+/*
     public function relProduto(){
         return $this->hasOne('App\User','id', 'name');
-    }
+    }*/
 }
