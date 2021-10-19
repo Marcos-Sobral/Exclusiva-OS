@@ -35,18 +35,19 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
+/*
     public function store(Request $request ){
         dd($request);
-     }
+     }*/
 
-    /* public function store(Request $request ){
+
+     public function store(Request $request ){
         $event = new produto;
+        //$event->create($request->all());
         $event->idProduto = $request->id;
-        $event->nomeProduto = $request->nome;
+        $event->nomeProduto = $request->title;
         $event->quantidadeProduto = $request->quantidade;
         $event->precoProduto = $request->preco;
-
         $event->save();
         //return redirect()->route('index-home');
       }
