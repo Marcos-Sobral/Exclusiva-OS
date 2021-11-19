@@ -49,7 +49,7 @@ class UserController extends Controller
         $event->quantidadeProduto = $request->quantidade;
         $event->precoProduto = $request->preco;
         $event->save();
-        return redirect()->route('index-home');
+        return redirect()->route('home');
       }
       
 /*
