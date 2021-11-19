@@ -50,6 +50,7 @@ h1> Lista </h1>
       <th scope="col">Preco</th>
     </tr>
   </thead>
+
   <tbody>
   @foreach($prod as $produto)
 
@@ -61,6 +62,7 @@ h1> Lista </h1>
     </tr>
     @endforeach
   </tbody>
+  
 </table>
 
 </div>

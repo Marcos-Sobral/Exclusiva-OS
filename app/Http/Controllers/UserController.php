@@ -49,7 +49,7 @@ class UserController extends Controller
         $event->quantidadeProduto = $request->quantidade;
         $event->precoProduto = $request->preco;
         $event->save();
-        //return redirect()->route('index-home');
+        return redirect()->route('index-home');
       }
       
 /*
@@ -63,10 +63,24 @@ class UserController extends Controller
         return view('create');
     }
 
-    public function editar()
+    public function editar(Request $request)
     {
-        return view('editar');
+        
+         $event = $request->all();
+         auth()->produto()->update($event);
+         $update = auth()->produto()->update($event);
+
+         if($update)
+         return redirect()->route('index-editar');
     }
+
+    public function destroy($id)
+    {
+        Event::findOrFail($id)->delete();
+
+        return redirect ('/dashboard')->with('msg','Informaçao excluída !');
+    }
+
     /*
     public function cadastro()
     {
@@ -150,10 +164,4 @@ protected $fillable=['nome','email','preco','quantidade'];
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-     
-     public function destroy($id)
-    {
-        //
-    }
 }
