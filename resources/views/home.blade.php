@@ -2,7 +2,6 @@
 @section('title','Inicio')
 @section('content')
 <div class="container">
-<form method="POST" action="{{route('home')}}">    
     <div class="row justify-content-center">
         <div class="col-md-8">
 
@@ -47,25 +46,11 @@
                 <a href="#">Excluir</a>
                 <br> <br>
 
-                <br> <br>
-                <a href="#">Consultar</a>
-                <br> <br>
-                <div class="col-8 m-auto">
-
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Quantidade</th>
-                        <th scope="col">Preco</th>
-                        </tr>
-                    </thead>
-
-
-                    
-                    </table>
-
+                <div class="text-center mt-3 mb-4">
+                    <a href="{{ route('consulta') }}">
+                        <button class="btn btn-success">Consulta</button>
+                    </a>
+                </div>
         </div>
     </div>
 </div>

@@ -17,24 +17,11 @@ class UserController extends Controller
         $this->objuser=new User();
         $this->objproduto=new Produto();
     }
-*/
-    public function home()
+    */
+    public function consulta()
     {
-        $prod = produtos::get();
-        
-        return view('home', compact ('prod'));
-    }
-/*
-    public function get()
-    {
-        //$produtos = produto::all();
-        $prod = produto::get();
-        //dd($prod);
-       //return view('index', ['prod'->produto]);
-       //return view('index', ['produtos']);
-       return view ('home', compact('prod'));
-       //return view('index');
-      
+        $prod =produto::all();
+        return view('consulta', compact('prod'));
     }
 
 /*
@@ -70,7 +57,11 @@ class UserController extends Controller
         return view('create');
     }
 
-    public function editar(Request $request)
+    public function editar()
+    {
+        return view('editar');
+    }
+    public function edit (Request $request)
     {
         
          $event = $request->all();
@@ -78,7 +69,7 @@ class UserController extends Controller
          $update = auth()->produto()->update($event);
 
          if($update)
-         return redirect()->route('index-editar');
+         return redirect()->route('edit');
     }
 
     public function destroy($id)

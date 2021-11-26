@@ -9,10 +9,12 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
-route::get('/index', [UserController::class, 'get'])->name('index-home');;
+//route::get('/index', [UserController::class, 'get'])->name('index-home');;
 route::get('/create', [UserController::class, 'create'])->name('index-create');
 route::post('/', [UserController::class, 'store'])->name('index-store');
 route::get('/editar', [UserController::class, 'editar'])->name('index-editar');
+route::post('/edit', [UserController::class, 'edit'])->name('edit');
+route::get('/consulta', [UserController::class, 'consulta'])->name('consulta');
 
 route::fallback(function(){
     return 'Erro de localização de rota !';
