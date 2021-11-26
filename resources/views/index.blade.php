@@ -52,7 +52,7 @@ h1> Lista </h1>
   </thead>
 
   <tbody>
-  @foreach($prod as $produto)
+  @foreach($prod as $produtos)
 
     <tr>
       <th>{{ $prod->idProduto }}</th>

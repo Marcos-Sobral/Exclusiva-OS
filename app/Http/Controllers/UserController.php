@@ -18,6 +18,13 @@ class UserController extends Controller
         $this->objproduto=new Produto();
     }
 */
+    public function home()
+    {
+        $prod = produtos::get();
+        
+        return view('home', compact ('prod'));
+    }
+/*
     public function get()
     {
         //$produtos = produto::all();
@@ -25,7 +32,7 @@ class UserController extends Controller
         //dd($prod);
        //return view('index', ['prod'->produto]);
        //return view('index', ['produtos']);
-       return view ('index', compact('prod'));
+       return view ('home', compact('prod'));
        //return view('index');
       
     }
