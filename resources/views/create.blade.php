@@ -6,8 +6,9 @@
 
 
 <div class="container">
-    <form method="POST" action="{{route('index-store')}}">    
+    <form method="POST" action="{{route('index-store')}}" enctype="multipart/form-data">    
     @csrf
+    
 
     <div class="form-group">
             <label  for="ID">ID</label>
@@ -28,6 +29,17 @@
             <label  for="nomeDoProduto">Quantidade </label>
              <input class="form-control" type="text" name="quantidade" id="quantidade" placeholder="Informe a quantidade de produto"><br>
         </div>
+
+        <div class="form-group">
+            <label  for="date">Data de Cadastro </label>
+             <input class="form-control" type="date" name="date" id="date"><br>
+        </div>
+
+        <div class="form-group">
+           <label for="image"> Imagem do Produto:</label>
+           <input type="file" id="image" name="image" class="from-control-file">
+        </div>
+    
 
         <div class="text-center mt-3 mb-4">
             <input type="submit" name="submit" class="btn btn-primary">

@@ -10,6 +10,7 @@ class Produto extends Model
     protected $table='produtos';   
     use HasFactory;
 
+    //protected $dates = ['date'];
 
     protected $guarded = [];
    protected $fillable = [
@@ -17,6 +18,7 @@ class Produto extends Model
         "nomeProduto",
         "quantidadeProduto",
         "precoProduto",
+        "image",
     ];
 /*
 

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-
+        
             <div class="card">
 
                 <div class="card-body">
@@ -15,6 +15,13 @@
                     @endif
                 </div>
 
+             <div class="container-fluid">
+                 <div class="row">
+                     @if(session ('msg'))
+                     <p class='msg'> {{ session('msg') }} </p>
+                     @endif
+                     @yield('content')
+             </div>
             </div>
 
                 </h1>
@@ -43,7 +50,13 @@
                 </div>
 
                 <br> <br>
-                <a href="#">Excluir</a>
+
+                <div class="text-center mt-3 mb-4">
+                    <a href="{{ route('delete') }}">
+                        <button class="btn btn-success">Deletar</button>
+                    </a>
+                </div>
+
                 <br> <br>
 
                 <div class="text-center mt-3 mb-4">
@@ -51,7 +64,10 @@
                         <button class="btn btn-success">Consulta</button>
                     </a>
                 </div>
+                
         </div>
+        
     </div>
+  
 </div>
 @endsection

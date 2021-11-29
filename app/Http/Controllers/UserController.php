@@ -42,8 +42,26 @@ class UserController extends Controller
         $event->nomeProduto = $request->title;
         $event->quantidadeProduto = $request->quantidade;
         $event->precoProduto = $request->preco;
+        //$event->date = $request->date;
+
+        // image upload
+
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('C:\laravel\projeto\public\assets\bootstrap\images'), $imageName);
+            
+            $event->image = $imageName;
+        
+        }
+
         $event->save();
-        return redirect()->route('home');
+        return redirect()->route('home')->with('msg', "Produto adicionado com sucesso !");
       }
       
 /*
@@ -61,6 +79,7 @@ class UserController extends Controller
     {
         return view('editar');
     }
+
     public function edit (Request $request)
     {
         
@@ -72,11 +91,17 @@ class UserController extends Controller
          return redirect()->route('edit');
     }
 
+    public function delete()
+    {
+        return view('delete');
+    }
+
+
     public function destroy($id)
     {
-        Event::findOrFail($id)->delete();
+        produto::findOrFail($id)->delete();
 
-        return redirect ('/dashboard')->with('msg','Informaçao excluída !');
+        return redirect ('delete')->with('msg','Informaçao excluída !');
     }
 
     /*

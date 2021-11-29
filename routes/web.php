@@ -15,7 +15,10 @@ route::post('/', [UserController::class, 'store'])->name('index-store');
 route::get('/editar', [UserController::class, 'editar'])->name('index-editar');
 route::post('/edit', [UserController::class, 'edit'])->name('edit');
 route::get('/consulta', [UserController::class, 'consulta'])->name('consulta');
+route::get('/delete', [UserController::class, 'delete'])->name('delete');
+route::delete('/delete/{id}', [UserController::class, 'destroy']);
 
+ 
 route::fallback(function(){
     return 'Erro de localização de rota !';
 });
