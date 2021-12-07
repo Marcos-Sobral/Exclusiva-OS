@@ -6,6 +6,7 @@
 
 
 <div class="container">
+
     <form method="POST" action="{{route('index-store')}}" enctype="multipart/form-data">    
     @csrf
     
