@@ -7,31 +7,30 @@
 
 
 <div class="container px-5 my-5">
-    <form name="formCad" id="formCad" method="post" action="{{url('produto')}}">    
-    @csrf
+        <form name="formCad" id="formCad" method="post"  action="{{ route('edit', $prod->id) }}">    
+            @csrf
+            @method("PUT")
+            
+                <div class="form-group">
+                    <label class="form-label"  for="nomeProduto">Nome do produto</label>
+                    <input class="form-control" name="nomeProduto" type="text" id="nomeProduto" value="{{ $prod->nomeProduto}}" placeholder="Informe o nome do produto"><br>
+                </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="nomeDoProduto">Nome do produto</label>
-             <input class="form-control" type="text" name="title" id="title" placeholder="Informe o nome do produto"><br>
-        </div>
+                <div class="form-group">
+                    <label class="form-label" for="precoProduto"> Valor</label>
+                    <input class="form-control" name="precoProduto" type="text" id="precoProduto"
+                    value="{{ $prod->precoProduto }}" placeholder="Informe o Valor do produto"><br>
+                </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="valor"> Valor</label>
-            <input class="form-control" type="text" name="preco" id="preco" placeholder="Informe o Valor do produto"><br>
-        </div>
+                <div class="form-group">
+                    <label class="form-label" for="quantidadeProduto"> Quantidade </label>
+                    <input class="form-control" name="quantidadeProduto" type="text" id="quantidadeProduto" value="{{ $prod->quantidadeProduto }}"  placeholder="Informe a quantidade de produto"><br>
+                </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="nomeDoProduto">Quantidade </label>
-             <input class="form-control" type="text" name="quantidade" id="quantidade" placeholder="Informe a quantidade de produto"><br>
-        </div>
-
-        <div class="text-center mt-3 mb-4">
-    <a href="{{url('produto/create')}}">
-        <button class="btn btn-success">Editar</button>
-    </a>
-</div>
-
-    </form>
+                <div class="text-center mt-3 mb-4">   
+                        <button class="btn btn-success">Editar</button>
+                </div>
+        </form>
 </div>
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 

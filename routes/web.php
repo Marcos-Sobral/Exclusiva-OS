@@ -2,20 +2,31 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\CrudController;
+use App\Http\Controllers\produController;
+use App\Models\produto;
 
+//route::resource('produtos', 'produController')->names('produto')->parameters(['produtos' => 'produto']);
 
 Route::get('/home', function () {
     return view('welcome');
 });
 
-route::get('/index', [UserController::class, 'get']);
-route::get('/cadastro', [UserController::class, 'cadastro'])->name('index-cadastro');
-route::get('/editar', [UserController::class, 'editar'])->name('index-editar');
+route::post('/', [UserController::class, 'store'])->name('index-store');
+route::get('/create', [UserController::class, 'create'])->name('index-create');
+route::get('/edit/{id}', [UserController::class, 'edit'])->name('index-editar');
+route::put('/update/{id}', [UserController::class, 'update'])->name('edit');
+//route::get('show/{idProduto}', [UserController::class, 'show'])->name('show');
+route::get('consulta', [UserController::class, 'consulta'])->name('consulta');
+route::delete('/delete/{id}', [UserController::class, 'destroy'])->name('destroy');;
 
-route::fallback(function(){
-    return 'Erro de localização de rota !';
-});
+ 
+
+//route::resource('/editar', [ProdController::class, 'editar'])->name('index-editar');
+
+//route::get('/delete', [UserController::class, 'delete'])->name('delete');
+//route::get('/index/{id}', [UserController::class, 'show'])->name('show');
+
+//route::get('/index', [UserController::class, 'get'])->name('index-home');;
 /*
 route::get('/home/{name?}', function($name){
     return view('cadastro',['cadastrar'=>$name]);
@@ -46,3 +57,7 @@ Route::get('usuario/{cadastro}', function ($cadastrp) {
 });
 
 */
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
