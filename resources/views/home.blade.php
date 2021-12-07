@@ -44,30 +44,18 @@
                 <br> <br>
 
                 <div class="text-center mt-3 mb-4">
-                    <a href="{{ route('index-editar') }}">
-                        <button class="btn btn-success">Editar</button>
-                    </a>
-                </div>
-
-                <br> <br>
-
-                <div class="text-center mt-3 mb-4">
-                    <a href="{{ route('delete') }}">
-                        <button class="btn btn-success">Deletar</button>
-                    </a>
-                </div>
-
-                <br> <br>
-
-                <div class="text-center mt-3 mb-4">
                     <a href="{{ route('consulta') }}">
                         <button class="btn btn-success">Consulta</button>
                     </a>
                 </div>
-                
+        
+
+
         </div>
         
     </div>
   
 </div>
+
+
 @endsection

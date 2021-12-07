@@ -14,7 +14,7 @@ class Produto extends Model
 
     protected $guarded = [];
    protected $fillable = [
-        "idProduto",
+        "id",
         "nomeProduto",
         "quantidadeProduto",
         "precoProduto",

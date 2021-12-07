@@ -10,12 +10,6 @@
     <form method="POST" action="{{route('index-store')}}" enctype="multipart/form-data">    
     @csrf
     
-
-    <div class="form-group">
-            <label  for="ID">ID</label>
-             <input class="form-control" type="text" name="id" id="id" placeholder="Informe o id do produto"><br>
-        </div>
-
         <div class="form-group">
             <label  for="nomeDoProduto">Nome do produto</label>
              <input class="form-control" type="text" name="title" id="title" placeholder="Informe o nome do produto"><br>
@@ -29,11 +23,6 @@
         <div class="form-group">
             <label  for="nomeDoProduto">Quantidade </label>
              <input class="form-control" type="text" name="quantidade" id="quantidade" placeholder="Informe a quantidade de produto"><br>
-        </div>
-
-        <div class="form-group">
-            <label  for="date">Data de Cadastro </label>
-             <input class="form-control" type="date" name="date" id="date"><br>
         </div>
 
         <div class="form-group">
