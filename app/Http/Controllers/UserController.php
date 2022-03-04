@@ -92,6 +92,7 @@ class UserController extends Controller
 
     return view('editar', compact('prod'));
 }
+ 
 
     public function update(StoreUpdateRequest $request, $id)
     {
