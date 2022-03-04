@@ -27,6 +27,11 @@
                     <input class="form-control" name="quantidadeProduto" type="text" id="quantidadeProduto" value="{{ $prod->quantidadeProduto }}"  placeholder="Informe a quantidade de produto"><br>
                 </div>
 
+                <div class="form-group">
+                    <label for="image"> Imagem do Produto:</label>
+                    <input type="file" value="{{ $prod->image}}" id="image" name="image" class="from-control-file">
+                </div>
+
                 <div class="text-center mt-3 mb-4">   
                         <button class="btn btn-success">Editar</button>
                 </div>

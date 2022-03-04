@@ -89,6 +89,7 @@ class UserController extends Controller
     if(!$prod){
         return redirect()->route('home');
     }
+
     return view('editar', compact('prod'));
 }
 
@@ -96,26 +97,27 @@ class UserController extends Controller
     {
         $prod = produto::find($id);
 
+        dd($id);
+
         if(!$prod){
             return redirect()->back();
         }
 
-        
-        /*$data = $request->all();
-
         if($request->hasFile('image') && $request->file('image')->isValid()) {
 
-            if($prod->image && image::exists($prod->image)){
-                image::delete($prod->image);
-            }
-            $requestImage = $request->image->store('images');
-            $data['image'] = $requestImage;
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('images'), $imageName);
+            
+            $event->image = $imageName;
+        
         }
 
-        $prod->update($data);*/
-        
         $prod->update($request->all());
-        //$prod->save();
         return redirect()->route('home')->with('msg', "Produto alterado com sucesso !");
     }
 
