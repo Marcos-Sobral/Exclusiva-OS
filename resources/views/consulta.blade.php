@@ -1,6 +1,6 @@
 @extends('layout.templete')
 
-@section('title','Consulta')
+@section('Link','Consulta')
 
 @section('content')
   
