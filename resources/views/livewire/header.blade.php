@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>@yield('Link') - OS </title>
-  <link rel="icon" href="{{ asset('assets/img/logo/1.png') }}" class="rounded-circle" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/normalize.css'); }} " media="screen" />
-
-	<!-- Font de icons -->
-	<script src="https://kit.fontawesome.com/7d7b31a9bc.js" crossorigin="anonymous"></script>
-
-	
-	<!-- Fonts -->
-	<link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-  
-	<!-- BootStrap-->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css'); }} " media="screen" />
-</head>
-<body>	    
-    <header>
+<header>
       <nav class="navbar navbar-expand-lg bg-white sombra">
         <div class="container-fluid d-flex justify-content-between align-items-center mx-5 my-3">
           
@@ -53,7 +32,3 @@
         </div>
       </nav>
     </header>
-	@yield('content')
-	
-</body>
-</html>
